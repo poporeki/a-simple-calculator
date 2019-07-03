@@ -95,6 +95,7 @@
 
     },
     inners: '',
+    /**创建wrap */
     createUIROOT: function () {
       var that = this;
       var div = document.createElement('div');
@@ -108,6 +109,7 @@
       that.onclick();
       that.keyboardFn();
     },
+    /**创建子元素 */
     createUI: function (arr) {
       var that = this;
       if (!typeof arr === 'object' && arr instanceof Array) return;
@@ -141,6 +143,7 @@
       this.div.querySelector('.main-screen').innerText = 0;
       this.div.querySelector('.vice-screen').innerHTML = '';
     },
+    /**元素单击事件 */
     onclick: function () {
       var that = this;
       var saved = that.resultCache;
@@ -187,6 +190,7 @@
         this.otherProcessing(val);
       }
     },
+    /**其它值 */
     otherProcessing: function (inputted) {
       var that = this;
       switch (inputted) {
@@ -327,6 +331,7 @@
       var result = eval(nums);
       return result;
     },
+    /**等于 */
     equal: function () {
       if (this.backup[this.backup.length - 1] === '.') {
         this.backup.pop();
@@ -347,6 +352,7 @@
       main.innerText = result;
 
     },
+    /**键盘输入 */
     keyboardFn: function () {
       var that = this;
       window.addEventListener('keydown', function (e) {
